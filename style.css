@@ -1,0 +1,212 @@
+/* =====================================
+   ملف ستايل CSS لموقع عمر خريبين
+   ===================================== */
+:root {
+    --primary-color: #0779e4; /* لون أزرق مميز */
+    --dark-color: #333333;
+    --light-color: #f4f4f4;
+    --white-color: #ffffff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    direction: rtl; /* التأكد من أن الموقع يعمل بالعربية من اليمين لليسار */
+    text-align: right;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* =====================================
+   شريط التنقل (Navigation)
+   ===================================== */
+nav {
+    background: var(--dark-color);
+    color: var(--white-color);
+    padding: 1rem 0;
+    position: sticky; /* جعل شريط التنقل ثابتاً في الأعلى */
+    top: 0;
+    z-index: 1000;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: var(--white-color);
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* =====================================
+   قسم البطل (Hero Section) - الخلفية الكبيرة
+   ===================================== */
+.hero {
+    background: url('mf.b37mrtl.ru') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white-color);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* طبقة شفافة داكنة */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* =====================================
+   الأقسام الرئيسية (Sections)
+   ===================================== */
+section {
+    padding: 4rem 0;
+    background: var(--white-color);
+    margin-top: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.image-beside-text img {
+    float: left; /* وضع الصورة على اليسار في التصميم العربي */
+    margin-left: 20px;
+    max-width: 250px;
+    border-radius: 50%; /* لجعل الصورة دائرية */
+    border: 5px solid var(--light-color);
+}
+
+/* =====================================
+   نموذج الاتصال (Contact Form)
+   ===================================== */
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.btn-submit {
+    display: inline-block;
+    background: var(--dark-color);
+    color: var(--white-color);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: var(--primary-color);
+}
+
+/* =====================================
+   التذييل (Footer)
+   ===================================== */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    margin-top: 20px;
+}
+
+/* =====================================
+   تصميم متجاوب (Responsive Design)
+   ===================================== */
+@media (max-width: 768px) {
+    nav .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav h1 {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .image-beside-text img {
+        float: none;
+        margin: 0 auto 15px;
+        display: block;
+    }
+}
